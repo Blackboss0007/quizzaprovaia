@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz AprovaIA — Descubra o que falta na sua preparação</title>
+<meta name="description" content="Responda 5 perguntas rápidas e descubra o que pode estar faltando na sua preparação.">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236D28D9'/%3E%3Cpath d='M22 39l10-19 10 19M25 33h14' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#fbfaff;--card:#fff;--gr:#f4f0ff;--bd:#e7e1f6;--pu:#6d28d9;--gl:#8b5cf6;--li:#6d28d9;--mu:#5f5a75;--tx:#17132b;--sh:0 18px 50px rgba(76,29,149,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font:16px/1.55 Poppins,"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(60vw 45vw at 90% -8%,rgba(139,92,246,.16),transparent 62%),radial-gradient(50vw 40vw at -8% 100%,rgba(96,165,250,.12),transparent 62%)}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.top{display:flex;align-items:center;justify-content:space-between;width:min(680px,100% - 28px);margin:0 auto;padding:20px 0 8px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.01em}
+.lg{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;font-size:15px}
+main{flex:1;width:min(680px,100% - 28px);margin:0 auto;padding:8px 0 40px;display:flex;flex-direction:column}
+#stage{flex:1;display:flex;flex-direction:column;justify-content:center;background:var(--card);border:1px solid var(--bd);border-radius:28px;box-shadow:var(--sh);padding:clamp(20px,5vw,40px);animation:in .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.kick{display:inline-block;align-self:flex-start;background:var(--gr);color:var(--pu);border:1px solid var(--bd);border-radius:99px;padding:5px 14px;font-size:12px;letter-spacing:.06em;font-weight:600}
+h1{font-size:clamp(26px,6.6vw,40px);line-height:1.12;letter-spacing:-.03em;font-weight:700;margin:16px 0 14px;color:var(--tx)}
+h1 em{font-style:normal;background:linear-gradient(90deg,#6d28d9,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(21px,5.4vw,28px);line-height:1.25;letter-spacing:-.02em;font-weight:700;margin:10px 0 20px}
+h3{font-size:15px;margin-bottom:4px;font-weight:600}
+p.lead{color:var(--mu);font-size:clamp(15px,4vw,17px);margin-bottom:12px}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;margin-top:22px;padding:16px 24px;border:0;border-radius:999px;background:linear-gradient(135deg,#6d0fd0,#7c3aed);color:#fff;font-weight:600;font-size:16px;letter-spacing:.01em;text-decoration:none;text-align:center;box-shadow:0 12px 28px rgba(109,40,217,.32);transition:transform .15s,box-shadow .15s}
+.cta:after{content:"\2192";font-size:18px;line-height:1}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(109,40,217,.42)}.cta:active{transform:scale(.985)}
+:focus-visible{outline:3px solid #a78bfa;outline-offset:3px}
+.prog{margin-bottom:22px}
+.prog .row{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.1em;font-weight:600;color:var(--pu);margin-bottom:10px}
+.back{background:none;border:0;color:var(--mu);font-size:13px;font-weight:600;padding:6px 2px}.back:hover{color:var(--pu)}
+.track{height:10px;border-radius:99px;background:#efe9fb;overflow:hidden}.track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#6d28d9,#a78bfa 60%,#60a5fa);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;min-height:62px;text-align:left;padding:14px 16px;border-radius:18px;border:1.5px solid var(--bd);background:#fff;font-size:15.5px;font-weight:500;line-height:1.4;color:var(--tx);box-shadow:0 2px 8px rgba(76,29,149,.04);transition:border-color .15s,background .15s,transform .15s,box-shadow .15s}
+.opt b{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--gr);color:var(--pu);font-size:13px;font-weight:700;transition:.15s}
+.opt:hover{border-color:#a78bfa;transform:translateY(-1px);box-shadow:0 8px 20px rgba(76,29,149,.09)}.opt:active{transform:scale(.99)}
+.opt.on{border-color:var(--pu);background:linear-gradient(135deg,#f3ecff,#faf7ff);box-shadow:0 0 0 3px rgba(109,40,217,.14)}.opt.on b{background:var(--pu);color:#fff}
+.steps{display:grid;gap:12px;margin-top:22px}
+.stp{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--bd);border-radius:16px;background:#fff;color:var(--mu);opacity:.55;transition:.4s}
+.stp i{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--bd);display:grid;place-items:center;transition:.3s}
+.stp.run{opacity:1;color:var(--tx);border-color:#a78bfa;background:var(--gr)}.stp.run i{border-color:var(--pu);border-top-color:transparent;animation:sp .8s linear infinite}
+.stp.ok{opacity:1;color:var(--tx)}.stp.ok i{background:var(--pu);border-color:var(--pu)}.stp.ok i:after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+@keyframes sp{to{transform:rotate(360deg)}}
+.card{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:16px 18px;margin-bottom:12px;box-shadow:0 4px 14px rgba(76,29,149,.05)}
+.ch{display:flex;gap:14px;align-items:flex-start}.ch b.n{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--pu);color:#fff;font-size:13px}.ch p{color:var(--mu);font-size:14.5px}
+.rec{border-color:#dccffa;background:linear-gradient(135deg,#f5efff,#fff)}
+.sec{margin:24px 0 10px;color:var(--pu);font-size:12px;letter-spacing:.1em;font-weight:700;text-transform:uppercase}
+.hl{margin:26px 0 8px;font-size:clamp(22px,5.6vw,29px);line-height:1.18;letter-spacing:-.025em;font-weight:700}
+.note{color:var(--mu);font-size:12.5px;text-align:center;margin-top:14px}
+.link{display:block;margin:14px auto 0;background:none;border:0;color:var(--mu);font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.seg{display:inline-block;align-self:flex-start;margin-top:2px;padding:5px 14px;border-radius:99px;background:var(--gr);border:1px solid #dccffa;color:var(--pu);font-size:12px;font-weight:700}
+noscript{display:block;padding:24px;text-align:center;color:var(--mu)}
+@media(max-width:380px){.opt{font-size:14.5px;padding:12px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{body:before{display:none}#stage{box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="logo"><span class="lg">A</span><span>Aprova<span style="color:#8b5cf6">IA</span></span></div></header>
+<main><div id="stage" aria-live="polite"></div><noscript>Ative o JavaScript para responder ao quiz do AprovaIA.</noscript></main>
+<script>
+"use strict";
+const SALES="https://aprovaia-official-site.vercel.app/";
+const Q=[
+{k:"Comprometimento",q:"Até onde você está disposto a ir para conquistar sua aprovação?",o:["Estou disposto a fazer o necessário.","Quero muito, mas ainda preciso de disciplina.","Estou cansado de começar e não conseguir manter o ritmo.","Ainda estou avaliando se realmente vou me dedicar."]},
+{k:"Organização",q:"Hoje, você sabe exatamente o que precisa estudar?",o:["Sim, tenho um planejamento estruturado.","Tenho uma ideia, mas me perco durante a semana.","Estudo várias matérias sem uma direção definida.","Ainda não consegui montar um planejamento eficiente."]},
+{k:"Principal dificuldade",q:"O que mais está impedindo sua evolução nos estudos?",o:["Falta de organização e planejamento.","Dificuldade para memorizar os conteúdos.","Não sei quais matérias devo priorizar.","Falta de constância e disciplina.","Não consigo identificar meus erros."]},
+{k:"Preparação",q:"Como você acompanha sua evolução durante a preparação?",o:["Tenho revisões e acompanho meu desempenho.","Faço questões, mas não analiso meus erros.","Estudo bastante, mas não sei se estou evoluindo.","Não tenho nenhum sistema de acompanhamento."]},
+{k:"Decisão",q:"Se você tivesse um sistema para organizar sua preparação, planejar seus estudos, acompanhar revisões e identificar suas dificuldades, utilizaria?",o:["Sim. Quero levar minha preparação a sério.","Sim. Preciso de mais organização e direção.","Com certeza. Quero parar de estudar sem estratégia.","Quero conhecer melhor como funciona."]}];
+const CH={org:["Organização e planejamento","Sem um plano claro, a semana vira improviso e o esforço se dispersa."],mem:["Memorização e fixação","Estudar sem revisar na hora certa faz o conteúdo escapar. Revisão estratégica ajuda a fixar."],pri:["Priorização de matérias","Sem saber o que priorizar, você pode gastar tempo demais no que já domina."],con:["Constância e ritmo","Começar é fácil; manter é o desafio. Uma rotina guiada ajuda a sustentar o ritmo."],err:["Análise dos erros","Quem não identifica os próprios erros tende a repeti-los. Cada erro aponta onde evoluir."],aco:["Acompanhamento da evolução","Sem medir o progresso, fica difícil saber se o caminho está certo."]};
+const REC={org:"O AprovaIA ajuda você a montar um plano de estudos e a organizar sua semana, para você saber exatamente o que fazer em cada dia.",mem:"O AprovaIA reúne revisões e a Athena, sua mentora de IA, para você reforçar o que precisa fixar e tirar dúvidas na hora.",pri:"O Mapa Inteligente mostra seu progresso por matéria e ajuda você a decidir onde colocar seu tempo.",con:"O AprovaIA transforma sua preparação em uma rotina guiada, com metas e acompanhamento para você manter o ritmo.",err:"Com questões comentadas e simulados, o AprovaIA ajuda você a entender onde errou e o que precisa melhorar.",aco:"O Mapa Inteligente e as revisões ajudam você a enxergar sua evolução, em vez de estudar no escuro."};
+const SEG={decidido:["Pronto para agir","Você demonstrou decisão. O próximo passo é ter um sistema que sustente esse compromisso."],interessado:["Quer evoluir","Você quer evoluir e já sabe que precisa de mais direção. Isso é meio caminho andado."],explorando:["Avaliando o caminho","Você ainda está avaliando, e tudo bem. Conhecer o sistema é um bom jeito de decidir com clareza."]};
+function compute(a){const ch=[["org","mem","pri","con","err"][a[2]]],add=k=>{if(!ch.includes(k))ch.push(k)};
+if(a[1]===1||a[1]===3)add("org");if(a[1]===2)add("pri");if(a[3]===1)add("err");if(a[3]===2||a[3]===3)add("aco");if(a[0]===2)add("con");
+const r=[3,3,3,1][a[0]]+[3,3,3,2][a[4]];return{ch:ch.slice(0,3),prim:ch[0],score:r,seg:r>=6?"decidido":r===5?"interessado":"explorando"}}
+function dest(res){const u=new URL(SALES);new URLSearchParams(location.search).forEach((v,k)=>u.searchParams.set(k,v));
+[["quiz","aprovaia-black"],["quiz_perfil",res.seg],["quiz_dor",res.prim],["quiz_desafios",res.ch.join("-")]].forEach(([k,v])=>{if(!u.searchParams.has(k))u.searchParams.set(k,v)});return u.toString()}
+const $=s=>document.querySelector(s),st=$("#stage"),L="ABCDE";
+let ans=[],i=-1,lock=false,timers=[];
+const clr=()=>{timers.forEach(clearTimeout);timers=[]};
+const t=(f,ms)=>{const x=setTimeout(f,ms);timers.push(x)};
+function track(n,d){try{window.fbq&&window.fbq("trackCustom",n,d||{})}catch(e){}try{window.dataLayer&&window.dataLayer.push(Object.assign({event:n},d||{}))}catch(e){}}
+function show(h,focusSel){clr();st.style.animation="none";void st.offsetWidth;st.style.animation="";st.innerHTML=h;const f=st.querySelector(focusSel||"h1,h2");if(f){f.setAttribute("tabindex","-1");f.focus({preventScroll:true})}window.scrollTo(0,0)}
+function intro(){i=-1;ans=[];show(`<span class="kick">Quiz AprovaIA · 5 perguntas</span><h1>VOCÊ QUER REALMENTE <em>CONQUISTAR SUA APROVAÇÃO?</em></h1><p class="lead">Ou vai continuar estudando sem saber exatamente se está no caminho certo?</p><p class="lead">Responda 5 perguntas rápidas e descubra o que pode estar faltando na sua preparação.</p><button class="cta" id="go">QUERO DESCOBRIR AGORA</button><p class="note">Leva cerca de 1 minuto. Sem cadastro e sem e-mail.</p>`);$("#go").onclick=()=>{track("QuizIniciado");ask(0)}}
+function ask(n){i=n;lock=false;const q=Q[n],pct=Math.round((n+1)/5*100);
+show(`<div class="prog"><div class="row"><span>PERGUNTA ${n+1} DE 5</span><button class="back" id="bk" aria-label="Voltar">← VOLTAR</button></div><div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Progresso do quiz"><i style="width:${Math.round(n/5*100)}%"></i></div></div><h2>${q.q}</h2><div class="opts" role="radiogroup" aria-label="${q.k}">${q.o.map((o,k)=>`<button class="opt ${ans[n]===k?"on":""}" role="radio" aria-checked="${ans[n]===k}" data-k="${k}"><b>${L[k]}</b><span>${o}</span></button>`).join("")}</div>`);
+requestAnimationFrame(()=>requestAnimationFrame(()=>{const b=$(".track i");if(b)b.style.width=pct+"%"}));
+$("#bk").onclick=()=>{if(lock)return;n===0?intro():ask(n-1)};
+st.querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(n,+b.dataset.k))}
+function pick(n,k){if(lock)return;lock=true;ans[n]=k;st.querySelectorAll(".opt").forEach(b=>{const on=+b.dataset.k===k;b.classList.toggle("on",on);b.setAttribute("aria-checked",on)});track("QuizResposta",{pergunta:n+1,opcao:L[k]});t(()=>n<4?ask(n+1):process(),260)}
+function process(){i=5;const S=["Analisando sua rotina de estudos.","Identificando seus principais desafios.","Organizando seu perfil de preparação."];
+show(`<span class="kick">Só um instante</span><h2>ANALISANDO SEU PERFIL DE PREPARAÇÃO...</h2><div class="track"><i id="pb" style="width:4%"></i></div><div class="steps">${S.map((s,k)=>`<div class="stp" id="s${k}"><i></i><span>${s}</span></div>`).join("")}</div>`);
+S.forEach((_,k)=>{t(()=>{$("#s"+k).className="stp run";$("#pb").style.width=Math.round((k+.5)/3*100)+"%"},k*950+80);t(()=>{$("#s"+k).className="stp ok";$("#pb").style.width=Math.round((k+1)/3*100)+"%"},k*950+900)});t(result,3*950+250)}
+function result(){i=6;const r=compute(ans),u=dest(r),sg=SEG[r.seg];track("QuizConcluido",{perfil:r.seg,dor:r.prim,score:r.score});
+show(`<span class="kick">Resultado do seu quiz</span><h1>SUA PREPARAÇÃO PRECISA DE UMA <em>ESTRATÉGIA.</em></h1><p class="lead">Você já deu o primeiro passo: reconheceu que precisa evoluir. Mas querer ser aprovado não basta. É necessário transformar intenção em planejamento, organização e execução.</p><span class="seg">Seu momento: ${sg[0]}</span><p class="lead" style="margin-top:10px">${sg[1]}</p>
+<div class="sec">Principais desafios identificados</div>${r.ch.map((k,n)=>`<div class="card ch"><b class="n">${n+1}</b><div><h3>${CH[k][0]}</h3><p>${CH[k][1]}</p></div></div>`).join("")}
+<div class="sec">Recomendação para o seu momento</div><div class="card rec"><p style="color:var(--tx)">${REC[r.prim]}</p></div>
+<div class="hl">CHEGA DE ESTUDAR SEM SABER SE ESTÁ NO CAMINHO CERTO.</div><p class="lead">O AprovaIA foi desenvolvido para ajudar você a organizar sua preparação, planejar seus estudos, acompanhar revisões, praticar questões e ter mais clareza sobre o que precisa melhorar.</p>
+<a class="cta" id="buy" href="${u}" rel="noopener">QUERO CONHECER O APROVAIA AGORA</a><p class="note">Você será levado à página oficial do AprovaIA. Este quiz é uma orientação geral, não um diagnóstico nem uma promessa de resultado.</p><button class="link" id="again">Refazer o quiz</button>`);
+$("#buy").addEventListener("click",()=>track("QuizCTA",{perfil:r.seg,dor:r.prim}));$("#again").onclick=intro}
+document.addEventListener("keydown",e=>{if(i<0||i>4||lock||e.ctrlKey||e.metaKey||e.altKey)return;const k=L.indexOf(e.key.toUpperCase());if(k>=0&&k<Q[i].o.length&&e.key.length===1)pick(i,k)});
+intro();
+</script>
+</body>
+</html>
